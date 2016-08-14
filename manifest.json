@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "SmLoglify",
+  "version": "0.0.1",
+  "description": "This extension log every Ajax calls into DevTools console",
+  "browser_action": {
+    "default_icon": "icon_32.png"
+  },
+  "icons": {
+    "32": "icon_32.png",
+    "128": "icon_128.png"
+  },
+  "author": [
+    {
+      "name": "francesco",
+      "email": "francesco@supermercato24.it"
+    }
+  ],
+  "permissions": [
+    "webNavigation",
+    "webRequest",
+    "*://*.supermercato24.it/",
+    "*://*.s24srl.com/"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.supermercato24.it/",
+        "*://*.s24srl.com/"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "offline_enabled": false
+}
