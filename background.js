@@ -35,7 +35,7 @@ chrome.webRequest.onCompleted.addListener(function(request) {
 chrome.webNavigation.onBeforeNavigate.addListener(function(navigation) {
 
   chrome.browserAction.setBadgeBackgroundColor({
-    color: '#006600'
+    color: [ 225, 0, 0, 100 ]
   });
 }, {
   url: [ {
